@@ -22,6 +22,7 @@ public class CheckSchemeValid {
 
     private void check() throws SymbolExistOnlyInHoldingException {
         List<RseStock> rseStockList=  SCHEME.getRseStocks().getRseStock();
+int x=8;
 
         for (RseStock rseStock:rseStockList){
            Stock stock= StocksList.getStocksList().getStockBySymbol(rseStock.getRseSymbol());
