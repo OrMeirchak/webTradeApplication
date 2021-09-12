@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="../../common/jquery-3.6.0.min.js"></script>
+<!--<script src="signUp.js"></script>-->
+<head>
+    <meta charset="UTF-8">
+    <title>Rizpa trade app</title>
+</head>
+<body>
+<p>&nbsp;</p>
+<p style="text-align: right;">&nbsp;</p>
+<p>&nbsp;</p>
+<p style="text-align: center;">Welcome to rizpa trade application</p>
+<p style="text-align: center;"><span style="font-family: Arial;">
+    <span style="font-size: 13.3333px; background-color: #efefef;">Please enter user name</span>
+</span>
+</p>
+<form id="signUpForm" style="text-align: center;" action="signUp" method="GET">
+
+    <input class="usernametextfield" name="username" type="text" />
+
+    <div>&nbsp;</div>
+
+    <div>
+        <input id="tradertype" name="usertype" type="radio" value="trader" checked/>
+        <label for="tradertype">Trader</label>
+        <input id="admintype" name="usertype" type="radio" value="admin" />
+        <label for="admintype">Admin</label>
+    </div>
+
+    <div>&nbsp;</div>
+
+    <input type="submit" value="Login" />
+</form>
+<div id="error-placeholder" class="alert-danger" role="alert">&nbsp;</div>
+</body>
+</html>

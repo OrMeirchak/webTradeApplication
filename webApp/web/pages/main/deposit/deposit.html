@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<script>
+    $(function() { // onload...do
+    //add a function to the submit event
+    $("#makedepositform").submit(function() {
+        $.ajax({
+         data: $(this).serialize(),
+
+          url: this.action,
+            timeout: 2000,
+            error: function(errorObject) {
+                console.error("Failed to sign up !");
+            },
+            success: function(successMsg) {
+           alert(successMsg)
+            }
+        });
+ // by default - we'll always return false so it doesn't redirect the user.
+     return false;
+    });
+
+});
+</script>
+<h3>Make a deposit to your account</h3>
+<p>Please enter a quantity to deposit</p>
+<form id="makedepositform" style="text-align: center;" action="makeDeposit" method="POST">
+
+    <input class="amountToDeposit" name="amounttodeposit" type="number" min="1" required/>
+    <input type="submit" value="Make deposit" />
+</form>
+</body>
+</html>

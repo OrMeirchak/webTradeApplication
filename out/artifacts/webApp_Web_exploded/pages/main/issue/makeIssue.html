@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../../common/jquery-3.6.0.min.js"></script>
+    <script src="../../../common/context-path-helper.js"></script>
+    <script src="makeIssue.js"></script>
+    <script>
+
+ var MAKE_ISSUE_URL = buildUrlWithContextPath("makeIssue");
+$(document).ready(function(){
+    $("#makeissueform").on("submit", function(event){
+        event.preventDefault();
+
+        var formValues= $(this).serialize();
+
+        $.post(MAKE_ISSUE_URL, formValues, function(data){
+      HandelingResponse(data);
+        });
+    });
+});
+</script>
+</head>
+<body>
+<h3>Issue a new company</h3>
+<form id="makeissueform">
+    <p>
+        <label>Company name:</label>
+        <input type="text" name="companyname" required>
+    </p>
+    <p>
+        <label>Symbol name:</label>
+        <input type="text" name="companysymbol" required>
+    </p>
+    <p>
+        <label>Number of shares to be issued:</label>
+        <input type="number" name="stockamount" min="1">
+    </p>
+    <p>
+        <label>Company value</label>
+        <input type="number" name="companyvalue" min="1">
+    </p>
+    <input type="submit" value="Done">
+</form>
+</body>
+</html>
